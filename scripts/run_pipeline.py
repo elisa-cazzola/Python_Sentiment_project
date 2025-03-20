@@ -12,6 +12,7 @@ from src.make_model import train_model
 
 #se abbiamo tutto insieme rischiamo che se qualcosa non funge non capiamo dove come cosa fare
 #dividendo è più facile lavorare 
+#blabla
 
 # Set up logging
 logging.basicConfig(filename='../log/pipeline.log', level=logging.INFO, format="%(asctime)s - %(levelname)s - %(message)s")
