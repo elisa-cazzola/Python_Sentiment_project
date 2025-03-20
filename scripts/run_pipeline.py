@@ -10,6 +10,9 @@ from src.make_model import train_model
 # from src.evaluation import evaluate_model
 # from src.save_results import save_predictions
 
+#se abbiamo tutto insieme rischiamo che se qualcosa non funge non capiamo dove come cosa fare
+#dividendo è più facile lavorare 
+
 # Set up logging
 logging.basicConfig(filename='../log/pipeline.log', level=logging.INFO, format="%(asctime)s - %(levelname)s - %(message)s")
 
