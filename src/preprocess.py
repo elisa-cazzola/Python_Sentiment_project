@@ -1,7 +1,7 @@
 import os
 import sys
 import pandas as pd
-import nltk
+import nltk #national language tool kit
 import string
 import emoji
 from nltk.corpus import stopwords
@@ -36,7 +36,7 @@ def preprocess_data():
         text = text.lower()
 
         # Tokenize words
-        words = word_tokenize(text)
+        words = word_tokenize(text) #prendo un testo, creo token, più o meno parole, è un po' più intelligente perchè gestisce cose più complesse come -,\, e non solo ' '
 
         # Remove URLs
         words = [word for word in words if not urlparse(word).scheme]  # Checks if it's a URL
@@ -53,9 +53,12 @@ def preprocess_data():
         # Convert emojis to text (e.g., 😊 -> "smiling_face_with_smiling_eyes")
         words = [emoji.demojize(word).replace("_", " ") for word in words]
 
-        # Remove stopwords
+        # Remove stopwords (pronomi, preposizioni, parole che non danno informazione)
         words = [word for word in words if word not in stop_words]
+        # se sto guardando solo cv la presenza di questa parola è irrilevante 
+        # but if not and or possono essere stop words, se nell'analisi sono importanti non vanno tolte 
 
+        # lemma: individua il termine base (stemming è la radice, lemma è un termine base)
         # Lemmatize words
         words = [lemmatizer.lemmatize(word) for word in words]
 

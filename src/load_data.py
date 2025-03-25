@@ -23,7 +23,7 @@ def load_data():
     e1 = e1[['text', 'sentiment']]
     e2 = e2[['text', 'sentiment']]
     fifa = fifa[['Tweet', 'Sentiment']]
-    fifa.columns = ['text', 'sentiment']
+    fifa.columns = ['text', 'sentiment'] #rinominiamo le colonne così ci evitiamo i casini dopo
     generic = generic[['text', 'sentiment']]
     df = pd.concat([e1, e2, fifa, generic])
     df.reset_index(drop=True, inplace=True)
@@ -33,7 +33,7 @@ def load_data():
     conn = sqlite3.connect(config.DATABASE_PATH)
 
     # Write the DataFrame to a table (replace 'my_table' with your desired table name)
-    df.to_sql(config.RAW_TABLE, conn, if_exists='replace', index=False)
+    df.to_sql(config.RAW_TABLE, conn, if_exists='replace', index=False) #nome, connection, ..
 
     # Commit and close the connection
     conn.commit()

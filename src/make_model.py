@@ -14,7 +14,7 @@ import logging
 # Set up logging
 #logging.basicConfig(level=logging.INFO, format="%(asctime)s - %(levelname)s - %(message)s")
 
-
+# questa definizione è diversa dall'altra def load_data() perchè si trova su un file diverso
 def load_data():
     """Loads data from the SQLite database."""
     conn = sqlite3.connect(config.DATABASE_PATH)
@@ -23,7 +23,7 @@ def load_data():
     conn.close()
     return df
 
-
+# argomento della funzione: grid_search
 def train_model(grid_search=False):
     """Trains a Random Forest model with GridSearchCV and saves evaluation metrics to CSV."""
     df = load_data()
@@ -32,7 +32,7 @@ def train_model(grid_search=False):
     df_indices = df.index
 
     # Feature extraction
-    vectorizer = TfidfVectorizer()
+    vectorizer = TfidfVectorizer() #usando tfidf trasforma le stringhe in vettori (rappresentazione numerica)
     X = vectorizer.fit_transform(df['cleaned_text'])
     y = df['sentiment']
 

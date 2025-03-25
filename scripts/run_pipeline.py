@@ -46,5 +46,7 @@ def main():
 
     # logging.info("Sentiment Analysis Pipeline completed successfully!")
 
+    # prossima volta creiamo interfaccia per cui inserisci tweet, parte funzione e restituisce stima
+
 if __name__ == "__main__":
     main()
