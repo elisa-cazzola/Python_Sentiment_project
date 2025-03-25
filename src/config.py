@@ -2,6 +2,7 @@ import os
 
 # Base project directory
 BASE_DIR = os.path.dirname(os.path.abspath(__file__))
+# base dir è file config
 
 # Paths for raw data (Excel files)
 RAW_DATA_PATH = os.path.join(BASE_DIR, "../data/raw/")
